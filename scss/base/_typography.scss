@@ -1,0 +1,7 @@
+@use '../utilities/variables' as *;
+
+html,
+body {
+  color: $secondary-color;
+  font-size: 62.5%;
+}

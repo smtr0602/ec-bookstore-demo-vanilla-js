@@ -1,0 +1,22 @@
+header {
+  align-items: center;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+.header-logo {
+  width: 20%;
+}
+#shopping-bag {
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  width: 14%;
+  img {
+  }
+}
