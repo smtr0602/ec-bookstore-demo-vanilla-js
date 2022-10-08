@@ -24,7 +24,9 @@ const manageCartContentWindow = (e) => {
     // cart content clicked
   } else if (
     e.target.classList.contains('cart-content-wrap') ||
-    e.target.closest('.cart-content-wrap')
+    e.target.closest('.cart-content-wrap') ||
+    // delete btn is absolutely positioned so it fails `closest('.cart-content-wrap')` check
+    e.target.classList.contains('cart-item-delete-btn')
   ) {
     return;
   } else {
@@ -45,6 +47,12 @@ const updateCartContent = (id, action) => {
     } else {
       cartItems.push({ book, qty: 1 });
     }
+    // for animation
+    const cart = document.querySelector('.cart');
+    cart.classList.add('is-adding');
+    setTimeout(() => {
+      cart.classList.remove('is-adding');
+    }, 1000);
     return;
   }
   // remove

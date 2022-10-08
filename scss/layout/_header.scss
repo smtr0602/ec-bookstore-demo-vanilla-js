@@ -19,6 +19,9 @@ header {
   top: 0;
   right: 0.5rem;
   width: 14%;
+  &.is-adding {
+    animation: cart-adding 600ms linear;
+  }
   &-qty {
     background-color: #686868;
     border-radius: 50%;
@@ -131,5 +134,20 @@ header {
     top: 5px;
     right: 0;
     width: 1.5rem;
+  }
+}
+
+@keyframes cart-adding {
+  25% {
+    transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0);
   }
 }

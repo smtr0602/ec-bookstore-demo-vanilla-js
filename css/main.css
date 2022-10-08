@@ -145,6 +145,9 @@ header {
   right: 0.5rem;
   width: 14%;
 }
+.cart.is-adding {
+  animation: cart-adding 600ms linear;
+}
 .cart-qty {
   background-color: #686868;
   border-radius: 50%;
@@ -259,6 +262,20 @@ header {
   width: 1.5rem;
 }
 
+@keyframes cart-adding {
+  25% {
+    transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 .btn-primary {
   background-color: #920100;
   border: none;
