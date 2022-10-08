@@ -1,3 +1,5 @@
+@use '../utilities/variables' as *;
+
 header {
   align-items: center;
   display: flex;
@@ -9,7 +11,7 @@ header {
 .header-logo {
   width: 20%;
 }
-#shopping-bag {
+.cart {
   background-color: transparent;
   border: none;
   padding: 1rem;
@@ -17,6 +19,117 @@ header {
   top: 0;
   right: 0.5rem;
   width: 14%;
-  img {
+  &-qty {
+    background-color: #686868;
+    border-radius: 50%;
+    bottom: 1rem;
+    color: $secondary-color;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-right: -1.3rem;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    width: 1.5rem;
+  }
+  &-content-wrap {
+    background-color: #471010;
+    border-radius: 5px;
+    max-width: 400px;
+    min-width: 230px;
+    padding: 1.4rem 0;
+    position: absolute;
+    right: 0;
+    top: 65%;
+    transform: scale(0);
+    transform-origin: 85% -5%;
+    transition: transform 200ms ease-in-out;
+    width: 230px;
+    z-index: 10;
+    width: 60%;
+    &.is-shown {
+      transform: scale(1);
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    .total-amount {
+      border-top: 1px solid $secondary-color;
+      font-size: 2rem;
+      padding-top: 1.2rem;
+      padding: 1.2rem 2rem 0;
+      text-align: right;
+    }
+    .checkout-btn {
+      font-size: 1.6rem;
+      margin-top: 1.6rem;
+      width: 80%;
+    }
+  }
+  &-items {
+    &-wrap {
+      padding: 2rem 0;
+    }
+    max-height: 210px;
+    overflow-y: scroll;
+    padding: 0 2rem;
+    li {
+      border-bottom: 1px solid $secondary-color;
+      display: flex;
+      padding-bottom: 1.4rem;
+      position: relative;
+      & + li {
+        padding-top: 1.4rem;
+      }
+      &:last-of-type {
+        border: none;
+      }
+      &.cart-empty-msg {
+        display: block;
+        font-size: 1.4rem;
+        text-align: center;
+      }
+      img {
+        width: 25%;
+      }
+    }
+  }
+  &-item-price-wrap {
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: space-between;
+  }
+  &-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-left: 1rem;
+    width: 100%;
+    h4 {
+      font-size: 1.6rem;
+      margin-top: 8%;
+      overflow: hidden;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+  }
+  &-item-delete-btn {
+    background-color: #686868;
+    border-radius: 50%;
+    border: none;
+    color: $secondary-color;
+    content: '×';
+    font-family: inherit;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    padding: 0;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 1.5rem;
   }
 }

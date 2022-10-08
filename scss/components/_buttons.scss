@@ -1,0 +1,12 @@
+@use '../utilities/variables' as *;
+
+.btn-primary {
+  background-color: $primary-color;
+  border: none;
+  border-radius: 0.3rem;
+  color: $secondary-color;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.4rem;
+  padding: 0.8rem 2.5rem;
+}

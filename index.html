@@ -20,16 +20,27 @@
     ></script>
     <script defer src="./js/main.js"></script>
     <script defer src="./js/swiper.js"></script>
-    <title>Document</title>
+    <title>ECBookstore</title>
   </head>
   <body>
     <header>
       <a href="/" class="header-logo">
         <img src="./assets/imgs/logo.svg" alt="logo" />
       </a>
-      <button id="shopping-bag">
+      <button class="cart">
         <img src="./assets/imgs/icon-shopping-bag.svg" alt="shopping bag" />
+        <span class="cart-qty"></span>
       </button>
+      <div class="cart-content-wrap">
+        <h3>Shopping bag</h3>
+        <div class="cart-items-wrap">
+          <ul class="cart-items"></ul>
+        </div>
+        <p class="total-amount">
+          Total: ¥<span class="total-amount-value">0</span>
+        </p>
+        <button class="btn-primary checkout-btn">Checkout</button>
+      </div>
     </header>
     <main>
       <div class="swiper">
