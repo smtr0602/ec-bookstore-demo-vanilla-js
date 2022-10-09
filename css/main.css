@@ -172,7 +172,7 @@ header {
 .cart-content-wrap {
   background-color: #471010;
   border-radius: 5px;
-  max-width: 350px;
+  max-width: 330px;
   min-width: 260px;
   padding: 1.4rem 0;
   position: absolute;
@@ -238,8 +238,13 @@ header {
   padding: 2rem 0;
 }
 @media (min-width: 768px) {
+  .cart-items-wrap {
+    padding: 4rem 0 2rem;
+  }
+}
+@media (min-width: 768px) {
   .cart-items {
-    padding: 0 4rem;
+    padding: 0 3rem;
   }
 }
 .cart-items li {
@@ -333,7 +338,7 @@ header {
 }
 @media (min-width: 768px) {
   .cart-item-delete-btn {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     line-height: 2rem;
     top: 10px;
     width: 2rem;
@@ -398,6 +403,38 @@ main {
   transform: scale(1.2) !important;
 }
 
+.book-peek-btn {
+  border: none;
+  background-color: #471010;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  opacity: 0;
+  padding: 0.2rem 1rem;
+  position: absolute;
+  transition: transform 100ms ease-in-out, opacity 200ms ease-in-out 900ms;
+  right: 0;
+  top: -30px;
+}
+.book-peek-btn:active {
+  transform: scale(1.1);
+}
+@media (min-width: 768px) {
+  .book-peek-btn:hover {
+    transform: scale(1.1);
+  }
+  .book-peek-btn:active {
+    transform: scale(1.2);
+  }
+}
+.swiper-slide-active .book-peek-btn {
+  opacity: 1;
+}
+.book-peek-btn i {
+  padding-left: 1rem;
+}
+
 .book-info {
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
@@ -452,11 +489,11 @@ main {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out, transform 100ms ease-in-out;
   width: 83%;
 }
 .book-info .add-cart-btn:active {
-  transform: translateX(-50%) scale(1.2);
+  transform: translateX(-50%) scale(1.1);
 }
 @media (min-width: 768px) {
   .book-info .add-cart-btn {

@@ -49,6 +49,7 @@ const updateCartContent = (id, action) => {
     }
     // for animation
     const cart = document.querySelector('.cart');
+    cart.classList.remove('is-adding');
     cart.classList.add('is-adding');
     setTimeout(() => {
       cart.classList.remove('is-adding');
@@ -129,6 +130,7 @@ const init = async () => {
     const swiperWrapper = document.querySelector('.swiper-wrapper');
     swiperWrapper.innerHTML += `
     <div class="swiper-slide" data-id="${book._id}">
+        <button class="book-peek-btn">Look inside<i class="fa-sharp fa-solid fa-arrow-turn-down"></i></button>
         <img
           src="${book.coverImg}"
           alt="${book.nameJa}"

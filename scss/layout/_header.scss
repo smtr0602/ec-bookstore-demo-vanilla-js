@@ -43,9 +43,9 @@ header {
     width: 1.5rem;
   }
   &-content-wrap {
-    background-color: #471010;
+    background-color: $primary-color-dark;
     border-radius: 5px;
-    max-width: 350px;
+    max-width: 330px;
     min-width: 260px;
     padding: 1.4rem 0;
     position: absolute;
@@ -97,12 +97,15 @@ header {
   &-items {
     &-wrap {
       padding: 2rem 0;
+      @include for-md-screen-up {
+        padding: 4rem 0 2rem;
+      }
     }
     max-height: 210px;
     overflow-y: scroll;
     padding: 0 2rem;
     @include for-md-screen-up {
-      padding: 0 4rem;
+      padding: 0 3rem;
     }
     li {
       border-bottom: 1px solid $secondary-color;
@@ -182,7 +185,7 @@ header {
     right: 0;
     width: 1.5rem;
     @include for-md-screen-up {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       line-height: 2rem;
       top: 10px;
       width: 2rem;

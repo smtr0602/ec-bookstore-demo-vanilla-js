@@ -25,6 +25,38 @@ main {
   }
 }
 
+.book-peek-btn {
+  border: none;
+  background-color: $primary-color-dark;
+  color: $secondary-color;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  opacity: 0;
+  padding: 0.2rem 1rem;
+  position: absolute;
+  transition: transform 100ms ease-in-out, opacity 200ms ease-in-out 900ms;
+  right: 0;
+  top: -30px;
+  &:active {
+    transform: scale(1.1);
+  }
+  @include for-md-screen-up {
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(1.2);
+    }
+  }
+  .swiper-slide-active & {
+    opacity: 1;
+  }
+  i {
+    padding-left: 1rem;
+  }
+}
+
 .book-info {
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
@@ -72,10 +104,10 @@ main {
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out, transform 100ms ease-in-out;
     width: 83%;
     &:active {
-      transform: translateX(-50%) scale(1.2);
+      transform: translateX(-50%) scale(1.1);
     }
     @include for-md-screen-up {
       bottom: 3rem;
