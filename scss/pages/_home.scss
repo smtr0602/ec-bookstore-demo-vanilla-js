@@ -28,7 +28,7 @@ main {
 .book-info {
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
-  padding: 2rem 2.2rem;
+  padding: 8%;
   position: absolute;
   top: 0;
   transition: opacity 150ms ease-in;
@@ -54,12 +54,13 @@ main {
   .book-description {
     font-size: 1.2rem;
     line-height: 1.5;
-    margin-top: 2rem;
-    max-height: 32%;
+    margin-top: 10%;
+    max-height: 37%;
+    overflow-y: scroll;
   }
   .book-price {
     bottom: 7rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     position: absolute;
     right: 3rem;
     @include for-md-screen-up {
@@ -72,12 +73,12 @@ main {
     left: 50%;
     transform: translateX(-50%);
     transition: all 200ms ease-in-out;
-    width: 80%;
+    width: 83%;
+    &:active {
+      transform: translateX(-50%) scale(1.2);
+    }
     @include for-md-screen-up {
       bottom: 3rem;
-      &:active {
-        transform: translateX(-50%) scale(1.1);
-      }
     }
   }
   .is-zoomed & {

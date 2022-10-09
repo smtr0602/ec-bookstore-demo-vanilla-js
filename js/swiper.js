@@ -2,16 +2,16 @@ const checkMobile = () => {
   return window.innerWidth < 768;
 };
 
-let isMobile = false;
+let isMobile = checkMobile();
 const initSwiper = () => {
   const swiper = new Swiper('.swiper', {
     effect: 'coverflow',
     centeredSlides: true,
     loop: true,
     loopAdditionalSlides: 10,
-    slidesPerView: 1.6,
+    slidesPerView: isMobile ? 1.6 : 1.6,
     mousewheel: true,
-    spaceBetween: isMobile ? 6 : 100,
+    spaceBetween: isMobile ? 20 : 100,
     dir: 'rtl',
     coverflowEffect: {
       depth: isMobile ? 0 : 180,

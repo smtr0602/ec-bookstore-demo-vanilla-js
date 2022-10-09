@@ -1,7 +1,9 @@
 @use '../utilities/variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Roboto&display=swap');
 
 html,
 body {
   color: $secondary-color;
+  font-family: 'Noto Serif JP', serif;
   font-size: 62.5%;
 }
