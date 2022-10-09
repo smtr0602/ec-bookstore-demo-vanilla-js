@@ -1,4 +1,5 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 header {
   align-items: center;
@@ -9,15 +10,20 @@ header {
   text-align: center;
 }
 .header-logo {
+  margin-top: 1.2%;
+  max-width: 80px;
   width: 20%;
 }
 .cart {
   background-color: transparent;
   border: none;
+  cursor: pointer;
   padding: 1rem;
   position: absolute;
   top: 0;
   right: 0.5rem;
+  margin-top: 0.4%;
+  max-width: 55px;
   width: 14%;
   &.is-adding {
     animation: cart-adding 600ms linear;
@@ -39,8 +45,8 @@ header {
   &-content-wrap {
     background-color: #471010;
     border-radius: 5px;
-    max-width: 400px;
-    min-width: 230px;
+    max-width: 350px;
+    min-width: 260px;
     padding: 1.4rem 0;
     position: absolute;
     right: 0;
@@ -51,6 +57,10 @@ header {
     width: 230px;
     z-index: 10;
     width: 60%;
+    @include for-md-screen-up {
+      padding: 2.5rem 0 3rem;
+      transform-origin: 90% -3%;
+    }
     &.is-shown {
       transform: scale(1);
     }
@@ -63,11 +73,21 @@ header {
       padding-top: 1.2rem;
       padding: 1.2rem 2rem 0;
       text-align: right;
+      @include for-md-screen-up {
+        padding-top: 2rem;
+      }
     }
     .checkout-btn {
       font-size: 1.6rem;
       margin-top: 1.6rem;
       width: 80%;
+      &.is-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      @include for-md-screen-up {
+        margin-top: 3rem;
+      }
     }
   }
   &-items {
@@ -77,13 +97,22 @@ header {
     max-height: 210px;
     overflow-y: scroll;
     padding: 0 2rem;
+    @include for-md-screen-up {
+      padding: 0 4rem;
+    }
     li {
       border-bottom: 1px solid $secondary-color;
       display: flex;
       padding-bottom: 1.4rem;
       position: relative;
+      @include for-md-screen-up {
+        padding-bottom: 2.5rem;
+      }
       & + li {
         padding-top: 1.4rem;
+        @include for-md-screen-up {
+          padding-top: 2.5rem;
+        }
       }
       &:last-of-type {
         border: none;
@@ -92,6 +121,9 @@ header {
         display: block;
         font-size: 1.4rem;
         text-align: center;
+        @include for-md-screen-up {
+          font-size: 1.6rem;
+        }
       }
       img {
         width: 25%;
@@ -102,6 +134,9 @@ header {
     display: flex;
     font-size: 1.6rem;
     justify-content: space-between;
+    @include for-md-screen-up {
+      font-size: 1.8rem;
+    }
   }
   &-item-info {
     display: flex;
@@ -110,6 +145,9 @@ header {
     overflow: hidden;
     padding-left: 1rem;
     width: 100%;
+    @include for-md-screen-up {
+      padding-left: 3rem;
+    }
     h4 {
       font-size: 1.6rem;
       margin-top: 8%;
@@ -118,6 +156,9 @@ header {
       text-overflow: ellipsis;
       white-space: nowrap;
       width: 100%;
+      @include for-md-screen-up {
+        font-size: 1.8rem;
+      }
     }
   }
   &-item-delete-btn {
@@ -126,6 +167,7 @@ header {
     border: none;
     color: $secondary-color;
     content: '×';
+    cursor: pointer;
     font-family: inherit;
     font-size: 1.4rem;
     line-height: 1.5rem;
@@ -134,20 +176,26 @@ header {
     top: 5px;
     right: 0;
     width: 1.5rem;
+    @include for-md-screen-up {
+      font-size: 1.8rem;
+      line-height: 2rem;
+      top: 10px;
+      width: 2rem;
+    }
   }
 }
 
 @keyframes cart-adding {
   25% {
-    transform: rotate(-25deg);
+    transform: rotate(-20deg) scale(1);
   }
   50% {
-    transform: rotate(20deg);
+    transform: rotate(15deg) scale(1.4);
   }
   75% {
-    transform: rotate(-15deg);
+    transform: rotate(-10deg) scale(1.2);
   }
   100% {
-    transform: rotate(0);
+    transform: rotate(0) scale(1);
   }
 }

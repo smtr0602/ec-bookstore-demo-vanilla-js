@@ -1,3 +1,8 @@
+const checkMobile = () => {
+  return window.innerWidth < 768;
+};
+
+let isMobile = false;
 const initSwiper = () => {
   const swiper = new Swiper('.swiper', {
     effect: 'coverflow',
@@ -6,12 +11,12 @@ const initSwiper = () => {
     loopAdditionalSlides: 10,
     slidesPerView: 1.6,
     mousewheel: true,
-    spaceBetween: 6,
+    spaceBetween: isMobile ? 6 : 100,
     dir: 'rtl',
     coverflowEffect: {
-      depth: 0,
+      depth: isMobile ? 0 : 180,
       modifier: 1,
-      rotate: 50,
+      rotate: isMobile ? 50 : 20,
       slideShadows: false,
       stretch: 20,
     },
@@ -27,3 +32,12 @@ const initSwiper = () => {
     }, 300);
   });
 };
+
+// check mobile & desktop
+window.addEventListener('resize', () => {
+  if (checkMobile() && !isMobile) {
+    isMobile = true;
+  } else if (!checkMobile() && isMobile) {
+    isMobile = false;
+  }
+});

@@ -77,9 +77,15 @@ const updateTotalAmount = () => {
 
 const updateItemHtml = () => {
   let listHtml = '';
+  const checkoutBtn = document.querySelector('.checkout-btn');
   if (!cartItems.length) {
     listHtml = '<li class="cart-empty-msg">Shopping bag is empty.</li>';
+    checkoutBtn.classList.add('is-disabled');
+    document.querySelector('.cart-items').innerHTML = listHtml;
+
+    return;
   }
+  checkoutBtn.classList.remove('is-disabled');
   cartItems.forEach(({ book, qty }) => {
     listHtml += `
     <li data-id="${book._id}">
