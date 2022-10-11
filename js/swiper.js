@@ -9,7 +9,7 @@ const initSwiper = () => {
     centeredSlides: true,
     loop: true,
     loopAdditionalSlides: 10,
-    slidesPerView: isMobile ? 1.6 : 1.6,
+    slidesPerView: 1.6,
     mousewheel: true,
     spaceBetween: isMobile ? 20 : 100,
     dir: 'rtl',
